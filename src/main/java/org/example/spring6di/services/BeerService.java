@@ -1,21 +1,21 @@
 package org.example.spring6di.services;
 
-import org.example.spring6di.model.Beer;
+import org.example.spring6di.model.BeerDTO;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 public interface BeerService {
-    List<Beer> listBeers();
+    List<BeerDTO> listBeers();
 
-    Optional<Beer> getBeerById(UUID id);
+    Optional<BeerDTO> getBeerById(UUID id);
 
-    Beer saveNewBeer(Beer beer);
+    BeerDTO saveNewBeer(BeerDTO beer);
 
-    void updateBeerById(UUID beerId, Beer beer);
+    Optional<BeerDTO> updateBeerById(UUID beerId, BeerDTO beer);
 
-    void deleteById(UUID beerId);
+    Boolean deleteById(UUID beerId);
 
-    void patchBeerById(UUID beerId, Beer beer) throws NoSuchFieldException, IllegalAccessException;
+    void patchBeerById(UUID beerId, BeerDTO beer) throws NoSuchFieldException, IllegalAccessException;
 }
